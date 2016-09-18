@@ -13,7 +13,8 @@
 		2890C4B51D8F105C00450494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2890C4B31D8F105C00450494 /* Main.storyboard */; };
 		2890C4B71D8F105C00450494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2890C4B61D8F105C00450494 /* Assets.xcassets */; };
 		2890C4BA1D8F105C00450494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2890C4B81D8F105C00450494 /* LaunchScreen.storyboard */; };
-		2890C4C31D8F13C400450494 /* FlickerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2890C4C21D8F13C400450494 /* FlickerAPI.m */; };
+		2890C4C31D8F13C400450494 /* FlickrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2890C4C21D8F13C400450494 /* FlickrAPI.m */; };
+		28EFADB21D8F19B2000446B4 /* PhotoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADB11D8F19B2000446B4 /* PhotoStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +28,10 @@
 		2890C4B61D8F105C00450494 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2890C4B91D8F105C00450494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2890C4BB1D8F105C00450494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2890C4C11D8F13C400450494 /* FlickerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickerAPI.h; sourceTree = "<group>"; };
-		2890C4C21D8F13C400450494 /* FlickerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickerAPI.m; sourceTree = "<group>"; };
+		2890C4C11D8F13C400450494 /* FlickrAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPI.h; sourceTree = "<group>"; };
+		2890C4C21D8F13C400450494 /* FlickrAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrAPI.m; sourceTree = "<group>"; };
+		28EFADB01D8F19B2000446B4 /* PhotoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStore.h; sourceTree = "<group>"; };
+		28EFADB11D8F19B2000446B4 /* PhotoStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,8 @@
 		2890C49E1D8F105C00450494 = {
 			isa = PBXGroup;
 			children = (
+				28EFADB01D8F19B2000446B4 /* PhotoStore.h */,
+				28EFADB11D8F19B2000446B4 /* PhotoStore.m */,
 				2890C4A91D8F105C00450494 /* Photorama */,
 				2890C4A81D8F105C00450494 /* Products */,
 			);
@@ -66,8 +71,8 @@
 				2890C4B01D8F105C00450494 /* PhotosViewController.h */,
 				2890C4B11D8F105C00450494 /* PhotosViewController.m */,
 				2890C4B31D8F105C00450494 /* Main.storyboard */,
-				2890C4C11D8F13C400450494 /* FlickerAPI.h */,
-				2890C4C21D8F13C400450494 /* FlickerAPI.m */,
+				2890C4C11D8F13C400450494 /* FlickrAPI.h */,
+				2890C4C21D8F13C400450494 /* FlickrAPI.m */,
 				2890C4B61D8F105C00450494 /* Assets.xcassets */,
 				2890C4B81D8F105C00450494 /* LaunchScreen.storyboard */,
 				2890C4BB1D8F105C00450494 /* Info.plist */,
@@ -156,8 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2890C4B21D8F105C00450494 /* PhotosViewController.m in Sources */,
-				2890C4C31D8F13C400450494 /* FlickerAPI.m in Sources */,
+				2890C4C31D8F13C400450494 /* FlickrAPI.m in Sources */,
 				2890C4AF1D8F105C00450494 /* AppDelegate.m in Sources */,
+				28EFADB21D8F19B2000446B4 /* PhotoStore.m in Sources */,
 				2890C4AC1D8F105C00450494 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +321,7 @@
 				2890C4C01D8F105C00450494 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

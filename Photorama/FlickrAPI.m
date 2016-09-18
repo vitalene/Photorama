@@ -1,8 +1,8 @@
 
 
-#import "FlickerAPI.h"
+#import "FlickrAPI.h"
 
-@implementation FlickerAPI
+@implementation FlickrAPI
 NSString * const BaseURLString = @"https://api.flickr.com/services/rest";
 NSString * const RecentPhotosMethod = @"flickr.photos.getRecent";
 NSString * const APIKey = @"a6d819499131071f158fd740860a5a88";

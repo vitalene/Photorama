@@ -1,6 +1,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FlickerAPI : NSObject
+@interface FlickrAPI : NSObject
 + (NSURL *)recentPhotosURL;
 @end
