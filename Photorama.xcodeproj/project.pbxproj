@@ -18,6 +18,7 @@
 		28EFADB51D8F1E3B000446B4 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADB41D8F1E3B000446B4 /* Photo.m */; };
 		28EFADB81D8F3742000446B4 /* PhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADB71D8F3742000446B4 /* PhotoDataSource.m */; };
 		28EFADBB1D8F4271000446B4 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADBA1D8F4271000446B4 /* PhotoCollectionViewCell.m */; };
+		28EFADBE1D8F5308000446B4 /* PhotoInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADBD1D8F5308000446B4 /* PhotoInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		28EFADB71D8F3742000446B4 /* PhotoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDataSource.m; sourceTree = "<group>"; };
 		28EFADB91D8F4271000446B4 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		28EFADBA1D8F4271000446B4 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		28EFADBC1D8F5308000446B4 /* PhotoInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInfoViewController.h; sourceTree = "<group>"; };
+		28EFADBD1D8F5308000446B4 /* PhotoInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 			children = (
 				28EFADB01D8F19B2000446B4 /* PhotoStore.h */,
 				28EFADB11D8F19B2000446B4 /* PhotoStore.m */,
+				28EFADBC1D8F5308000446B4 /* PhotoInfoViewController.h */,
+				28EFADBD1D8F5308000446B4 /* PhotoInfoViewController.m */,
 				2890C4A91D8F105C00450494 /* Photorama */,
 				2890C4A81D8F105C00450494 /* Products */,
 			);
@@ -183,6 +188,7 @@
 				28EFADBB1D8F4271000446B4 /* PhotoCollectionViewCell.m in Sources */,
 				28EFADB81D8F3742000446B4 /* PhotoDataSource.m in Sources */,
 				2890C4AC1D8F105C00450494 /* main.m in Sources */,
+				28EFADBE1D8F5308000446B4 /* PhotoInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,7 @@
 #import "PhotoDataSource.h"
 #import "Photo.h"
 #import "PhotoCollectionViewCell.h"
-
+#import "PhotoInfoViewController.h"
 @interface PhotosViewController ()
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) PhotoDataSource *photoDataSource;@end
@@ -52,6 +52,17 @@
                                      [photoCell updateWithImage:image];
                                  }];
                              }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ShowPhoto"]) {
+        NSIndexPath *selectedIndexPath =
+        [self.collectionView indexPathsForSelectedItems].firstObject;
+        Photo *photo = self.photoDataSource.photos[selectedIndexPath.row];
+        PhotoInfoViewController *destinationVC = segue.destinationViewController;
+        destinationVC.photoStore = self.photoStore;
+        destinationVC.photo = photo;
+    }
 }
 
 
