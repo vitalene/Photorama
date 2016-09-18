@@ -2,6 +2,8 @@
 #import "PhotosViewController.h"
 #import "PhotoStore.h"
 #import "PhotoDataSource.h"
+#import "Photo.h"
+#import "PhotoCollectionViewCell.h"
 
 @interface PhotosViewController ()
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
@@ -12,6 +14,7 @@
     [super viewDidLoad];
     self.photoDataSource = [PhotoDataSource new];
     self.collectionView.dataSource = self.photoDataSource;
+    self.collectionView.delegate = self;
     [self.photoStore fetchRecentPhotosWithCompletion:^(NSArray *photos){
         NSLog(@"Found %lu photos", (unsigned long)photos.count);
         
@@ -26,5 +29,31 @@
         
     }];
 }
+
+
+- (void)collectionView:(UICollectionView *)collectionView
+       willDisplayCell:(UICollectionViewCell *)cell
+    forItemAtIndexPath:(NSIndexPath *)indexPath {
+    Photo *photo = self.photoDataSource.photos[indexPath.row];
+    // Download the image data, which could take some time
+    [self.photoStore fetchImageForPhoto:photo
+                             completion:^(UIImage *image) {
+                                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                     // The index path for the photo might have changed between the
+                                     // time the request started and finished, so find the most
+                                     // recent index path
+                                     NSUInteger photoIndex = [self.photoDataSource.photos indexOfObject:photo];
+                                     NSIndexPath *photoIndexPath = [NSIndexPath indexPathForItem:photoIndex
+                                                                                       inSection:0];
+                                     // When the request finishes, update the cell
+                                     PhotoCollectionViewCell *photoCell =
+                                     (PhotoCollectionViewCell *)[self.collectionView
+                                                                 cellForItemAtIndexPath:photoIndexPath];
+                                     [photoCell updateWithImage:image];
+                                 }];
+                             }];
+}
+
+
 
 @end
