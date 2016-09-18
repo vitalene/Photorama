@@ -2,11 +2,35 @@
 
 #import "FlickrAPI.h"
 #import "Photo.h"
+#import "PhotoStore.h"
 @implementation FlickrAPI
 NSString * const BaseURLString = @"https://api.flickr.com/services/rest";
 NSString * const RecentPhotosMethod = @"flickr.photos.getRecent";
 NSString * const APIKey = @"a6d819499131071f158fd740860a5a88";
 
++ (Photo *)photoFromJSON:(NSDictionary *)jsonDict {
+    NSString *photoID = jsonDict[@"id"];
+    NSString *title = jsonDict[@"title"];
+    NSURL *URL = [NSURL URLWithString:jsonDict[@"url_h"]];
+    NSDate *dateTaken = [[FlickrAPI dateFormatter] dateFromString:jsonDict[@"datetaken"]];
+    if (!photoID || !title || !URL || !dateTaken) {
+        return nil; }
+    Photo *photo = [[Photo alloc] initWithTitle:title
+                                        photoID:photoID
+                                      remoteURL:URL
+                                      dateTaken:dateTaken];
+    return photo;
+}
+
++ (NSDateFormatter *)dateFormatter {
+    static NSDateFormatter *formatter = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [NSDateFormatter new];
+        formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    });
+    return formatter;
+}
 + (NSURL *)flickrURLForMethod:(NSString *)method
                    parameters:(NSDictionary *)params {
     NSURLComponents *components = [NSURLComponents componentsWithString:BaseURLString];
@@ -47,36 +71,16 @@ NSString * const APIKey = @"a6d819499131071f158fd740860a5a88";
             if (photo) {
                 [photos addObject:photo];
             }
-        } else {
-            NSLog(@"Failed to parse JSON data. Error: %@", parseError);
         }
-        return photos; // returning empty array for now
+    } else {
+        NSLog(@"Failed to parse JSON data. Error: %@", parseError);
     }
-    
-    + (NSDateFormatter *)dateFormatter {
-        static NSDateFormatter *formatter = nil;
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            formatter = [NSDateFormatter new];
-            formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-        });
-        return formatter;
-    }
-    
-    + (Photo *)photoFromJSON:(NSDictionary *)jsonDict {
-        NSString *photoID = jsonDict[@"id"];
-        NSString *title = jsonDict[@"title"];
-        NSURL *URL = [NSURL URLWithString:jsonDict[@"url_h"]];
-        NSDate *dateTaken = [[FlickrAPI dateFormatter] dateFromString:jsonDict[@"datetaken"]];
-        if (!photoID || !title || !URL || !dateTaken) {
-            return nil; }
-        Photo *photo = [[Photo alloc] initWithTitle:title
-                                            photoID:photoID
-                                          remoteURL:URL
-                                          dateTaken:dateTaken];
-        return photo;
-    }
-    
-    
-    
-    @end
+    return photos; // returning empty array for now
+}
+
+
+
+
+
+
+@end

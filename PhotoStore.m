@@ -44,4 +44,36 @@
         return nil; }
 }
 
+-(void)fetchImageForPhoto:(Photo *)photo
+               completion:(void(^)(UIImage *))completion {
+    NSParameterAssert(photo);
+    NSParameterAssert(completion);
+    NSURLRequest *request = [NSURLRequest requestWithURL:photo.remoteURL];
+    NSURLSessionDataTask *task =
+    [self.session dataTaskWithRequest:request
+                    completionHandler:^(NSData *data,
+                                        NSURLResponse *response,
+                                        NSError *error) {
+                        UIImage *image = [self processImageRequestWithData:data
+                                                                     error:error];
+                        if (image != nil) {
+                            photo.image = image;
+                        }
+                        completion(image);
+                    }];
+    [task resume];
+}
+
+- (UIImage *)processImageRequestWithData:(NSData *)data
+                                   error:(NSError *)error {
+    if (data != nil) {
+        UIImage *image = [UIImage imageWithData:data];
+        return image;
+    }
+    else {
+        return nil; }
+}
+
+
+
 @end

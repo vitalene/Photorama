@@ -12,6 +12,19 @@
     [super viewDidLoad];
     [self.photoStore fetchRecentPhotosWithCompletion:^(NSArray *photos){
         NSLog(@"Found %lu photos", (unsigned long)photos.count);
+        
+        if (photos.count == 0) {
+            NSLog(@"Zero photos! Sad times.");
+            return; }
+        [self.photoStore fetchImageForPhoto:photos.firstObject
+                                 completion:^(UIImage *image) {
+                                     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                         self.imageView.image = image;
+                                     }];
+                                 }];
+        
+        
+        
     }];
 }
 
