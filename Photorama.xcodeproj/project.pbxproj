@@ -17,6 +17,7 @@
 		28EFADB21D8F19B2000446B4 /* PhotoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADB11D8F19B2000446B4 /* PhotoStore.m */; };
 		28EFADB51D8F1E3B000446B4 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADB41D8F1E3B000446B4 /* Photo.m */; };
 		28EFADB81D8F3742000446B4 /* PhotoDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADB71D8F3742000446B4 /* PhotoDataSource.m */; };
+		28EFADBB1D8F4271000446B4 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADBA1D8F4271000446B4 /* PhotoCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		28EFADB41D8F1E3B000446B4 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		28EFADB61D8F3742000446B4 /* PhotoDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoDataSource.h; sourceTree = "<group>"; };
 		28EFADB71D8F3742000446B4 /* PhotoDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoDataSource.m; sourceTree = "<group>"; };
+		28EFADB91D8F4271000446B4 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		28EFADBA1D8F4271000446B4 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,8 @@
 				28EFADB31D8F1E3B000446B4 /* Photo.h */,
 				28EFADB41D8F1E3B000446B4 /* Photo.m */,
 				2890C4B31D8F105C00450494 /* Main.storyboard */,
+				28EFADB91D8F4271000446B4 /* PhotoCollectionViewCell.h */,
+				28EFADBA1D8F4271000446B4 /* PhotoCollectionViewCell.m */,
 				28EFADB61D8F3742000446B4 /* PhotoDataSource.h */,
 				28EFADB71D8F3742000446B4 /* PhotoDataSource.m */,
 				2890C4C11D8F13C400450494 /* FlickrAPI.h */,
@@ -175,6 +180,7 @@
 				2890C4C31D8F13C400450494 /* FlickrAPI.m in Sources */,
 				2890C4AF1D8F105C00450494 /* AppDelegate.m in Sources */,
 				28EFADB21D8F19B2000446B4 /* PhotoStore.m in Sources */,
+				28EFADBB1D8F4271000446B4 /* PhotoCollectionViewCell.m in Sources */,
 				28EFADB81D8F3742000446B4 /* PhotoDataSource.m in Sources */,
 				2890C4AC1D8F105C00450494 /* main.m in Sources */,
 			);
