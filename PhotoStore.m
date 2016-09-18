@@ -2,6 +2,7 @@
 
 #import "PhotoStore.h"
 #import "FlickrAPI.h"
+#import "Photo.h"
 @interface PhotoStore ()
 @property (nonatomic) NSURLSession *session;
 @end
@@ -19,24 +20,28 @@
 
 
 
-- (void)fetchRecentPhotos {
+- (void)fetchRecentPhotosWithCompletion:(void(^)(NSArray *))completion {
+    NSParameterAssert(completion);
     NSURL *url = [FlickrAPI recentPhotosURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request
                                                  completionHandler:^(NSData *data,
                                                                      NSURLResponse *response,
                                                                      NSError *error) {
-                                                     if (data != nil) {
-                                                         NSString *jsonString =
-                                                         [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                                         NSLog(@"%@", jsonString);
-                                                     } else {
-                                                         NSLog(@"Failed to fetch data. Error: %@", error);
-                                                     }
+                                                     NSArray *photos = [self processRecentPhotosRequestWithData:data
+                                                                                                          error:error];
+                                                     completion(photos);
                                                  }];
     [task resume];
 }
 
 
+- (NSArray *)processRecentPhotosRequestWithData:(NSData *)data error:(NSError *)error {
+    if (data != nil) {
+        return [FlickrAPI photosFromJSONData:data];
+    }
+    else {
+        return nil; }
+}
 
 @end

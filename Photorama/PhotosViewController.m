@@ -10,7 +10,9 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    [self.photoStore fetchRecentPhotos];
+    [self.photoStore fetchRecentPhotosWithCompletion:^(NSArray *photos){
+        NSLog(@"Found %lu photos", (unsigned long)photos.count);
+    }];
 }
 
 @end

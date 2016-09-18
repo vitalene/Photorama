@@ -15,6 +15,7 @@
 		2890C4BA1D8F105C00450494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2890C4B81D8F105C00450494 /* LaunchScreen.storyboard */; };
 		2890C4C31D8F13C400450494 /* FlickrAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2890C4C21D8F13C400450494 /* FlickrAPI.m */; };
 		28EFADB21D8F19B2000446B4 /* PhotoStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADB11D8F19B2000446B4 /* PhotoStore.m */; };
+		28EFADB51D8F1E3B000446B4 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EFADB41D8F1E3B000446B4 /* Photo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		2890C4C21D8F13C400450494 /* FlickrAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrAPI.m; sourceTree = "<group>"; };
 		28EFADB01D8F19B2000446B4 /* PhotoStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStore.h; sourceTree = "<group>"; };
 		28EFADB11D8F19B2000446B4 /* PhotoStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStore.m; sourceTree = "<group>"; };
+		28EFADB31D8F1E3B000446B4 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		28EFADB41D8F1E3B000446B4 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				2890C4AE1D8F105C00450494 /* AppDelegate.m */,
 				2890C4B01D8F105C00450494 /* PhotosViewController.h */,
 				2890C4B11D8F105C00450494 /* PhotosViewController.m */,
+				28EFADB31D8F1E3B000446B4 /* Photo.h */,
+				28EFADB41D8F1E3B000446B4 /* Photo.m */,
 				2890C4B31D8F105C00450494 /* Main.storyboard */,
 				2890C4C11D8F13C400450494 /* FlickrAPI.h */,
 				2890C4C21D8F13C400450494 /* FlickrAPI.m */,
@@ -160,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EFADB51D8F1E3B000446B4 /* Photo.m in Sources */,
 				2890C4B21D8F105C00450494 /* PhotosViewController.m in Sources */,
 				2890C4C31D8F13C400450494 /* FlickrAPI.m in Sources */,
 				2890C4AF1D8F105C00450494 /* AppDelegate.m in Sources */,

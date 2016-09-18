@@ -2,5 +2,5 @@
 #import <Foundation/Foundation.h>
 
 @interface PhotoStore : NSObject
-- (void)fetchRecentPhotos;
+- (void)fetchRecentPhotosWithCompletion:(void(^)(NSArray *))completion;
 @end
